@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 0;
   inset-inline: 0;
-  height: 40px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,11 +16,26 @@
 .content {
   flex: 1;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: var(--mantine-spacing-xs);
   font-size: var(--mantine-font-size-sm);
   font-weight: 500;
+}
+
+@media (max-width: 36em) {
+  .banner {
+    padding-block: 6px;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .content :global(a) {
+    flex-basis: 100%;
+  }
 }
 
 .link {
